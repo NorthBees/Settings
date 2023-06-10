@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::resource('settings', SettingController::class)->middleware(['auth']);
+Route::resource('settings', \NorthBees\Settings\Http\Controllers\SettingController::class)->middleware(['auth']);
