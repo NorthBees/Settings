@@ -1,5 +1,6 @@
 <?php
 
+namespace NorthBees\Settings\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use NorthBees\Settings\Http\Requests\SettingCreateRequest;
