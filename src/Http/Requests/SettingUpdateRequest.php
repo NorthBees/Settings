@@ -21,12 +21,5 @@ class SettingUpdateRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
-    {
-        return [
-            'id'    => 'required|exists:settings,id',
-            'key'   => 'required',
-            'value' => 'nullable',
-        ];
-    }
+
 }

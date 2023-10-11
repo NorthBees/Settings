@@ -29,6 +29,11 @@ class SettingController extends Controller
         return SettingResource::make($setting);
     }
 
+    public function create()
+    {
+        return view('settings::create');
+    }
+
     public function edit(Setting $setting)
     {
         return view('settings::edit', [
@@ -36,14 +41,7 @@ class SettingController extends Controller
         ]);
     }
 
-    public function update(SettingUpdateRequest $request, Setting $setting)
-    {
-        $data = $request->validated();
-        $setting->fill($data);
-        $setting->save();
-        cache()->forget('setting_' . $setting->key);
-        return SettingResource::make($setting);
-    }
+
 
     public function store(SettingCreateRequest $request)
     {

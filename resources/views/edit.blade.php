@@ -6,5 +6,6 @@
         </ul>
     </x-slot>
 
+    <livewire:settings::setting-update :setting="$setting"></livewire:settings::setting-update>
 
 </x-app-layout>
