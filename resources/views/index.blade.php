@@ -3,6 +3,9 @@
         <ul>
             <li><a href="{{ route('admin.settings.index') }}">Settings</a></li>
         </ul>
+
+
+
     </x-slot>
 
 
@@ -14,6 +17,7 @@
         :actions="['edit'=>'admin.settings.edit', 'delete'=>'admin.settings.destroy', 'show'=>'admin.settings.show']"
     />
 
+    <a href="{{ route('admin.settings.create') }}"  wire:navigate role="button">Create</a>
 
 
 </x-app-layout>
