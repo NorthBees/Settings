@@ -1,13 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 Route::middleware([
     'web',
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->prefix('admin')->name('admin.')->group(function () {
+    InitializeTenancyByDomain::class,
+    PreventAccessFromCentralDomains::class,
+])->group(function () {
+    Route::middleware([
+        'web',
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified'
+    ])->prefix('admin')->name('admin.')->group(function () {
         Route::resource('settings', \NorthBees\Settings\Http\Controllers\SettingController::class);
     });
+});
 
