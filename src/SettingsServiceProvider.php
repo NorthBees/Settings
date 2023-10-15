@@ -23,7 +23,7 @@ class SettingsServiceProvider extends ServiceProvider
          $this->publishes([
             __DIR__.'/../database/migrations' => $this->app->databasePath('migrations/tenants'),
         ]);
-
+         
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'settings');
 
