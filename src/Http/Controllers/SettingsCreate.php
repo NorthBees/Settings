@@ -32,7 +32,7 @@ class SettingsCreate extends Component
         $this->dispatch('banner-message', style: 'success',
             message : 'Setting created!'
         );
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.settings.index');
 
     }
 }
