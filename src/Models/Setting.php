@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     use HasFactory;
+    
+    protected static $factory = \Database\Factories\SettingFactory::class;
 
     protected $fillable
         = [
